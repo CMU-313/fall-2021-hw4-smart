@@ -11,13 +11,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./dockerfile
 
     steps:
     - uses: actions/checkout@v2
     - name: checking
       run: ls
-    - name: checking
-      run: cd dockerfile
     - name: checking
       run: pwd
     - name: Build the Docker image
