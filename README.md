@@ -2,9 +2,9 @@
 
 Once the application has been deployed, the following line can be run to get outputs for applicants. (There are no pre-conditions for the service). A number for every feature must be provided since the API currently does not support missing variables.
 
-curl http://localhost:5000/predict?studytime=[insert score]&failures=[insert score]&schoolsup=[insert score]&famsup=[insert score]&activities=[insert score]&higher=[insert score]&internet=[insert score]&freetime=[insert score]&Dalc=[insert score]&Walc=[insert score]&health=[insert score]&absences=[insert score]
+curl http://localhost:5000/predict?studytime=[insert_score]&failures=[insert_score]&schoolsup=[insert_score]&famsup=[insert_score]&activities=[insert_score]&higher=[insert_score]&internet=[insert_score]&freetime=[insert_score]&Dalc=[insert_score]&Walc=[insert_score]&health=[insert_score]&absences=[insert_score]
 
-In each of the brackets (“[insert score]”), the command should be updated with the scores corresponding to the feature (ex: health=[insert score] updated to health=5). For binary features, 0 means no, and 1 means yes. The section below outlines the possible score ranges for each feature.
+In each of the brackets (“[insert_score]”), the command should be updated with the scores corresponding to the feature (ex: health=[insert_score] updated to health=5). For binary features, 0 means no, and 1 means yes. The section below outlines the possible score ranges for each feature.
 
 The output would be a 1 if the student is considered a high-quality student and 0 otherwise.
 
@@ -45,6 +45,7 @@ When testing on a random training and testing set split, the baseline model perf
 To deploy the application, the following commands should be run on the command line in the dockerfile directory.
 
 docker build -t ml:latest .
+
 docker run -d -p 5000:5000 ml
 
 **Testing:**
