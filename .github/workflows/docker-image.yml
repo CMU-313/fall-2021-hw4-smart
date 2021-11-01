@@ -14,8 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: move to dockerfile directory
-      run: cd dockerfile
+    - name: checking
+      run: pwd
     - name: Build the Docker image
       run: docker build -t ml:latest .
     - name: Run Docker image
