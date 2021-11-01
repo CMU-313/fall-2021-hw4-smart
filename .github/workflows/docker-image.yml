@@ -26,6 +26,11 @@ jobs:
     - name: Run Docker image
       run: docker run -d -p 5000:5000 ml
     - name: stop running Docker image
-      run: docker rmi $(docker images -q)
+      run: ids=$(docker ps -a -q)
+          for id in $ids
+          do
+           echo "$id"
+           docker stop $id && docker rm $id
+          done
     - name: remove build cahce
       run: docker system prune
