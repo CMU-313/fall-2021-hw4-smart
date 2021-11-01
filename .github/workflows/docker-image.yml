@@ -21,7 +21,5 @@ jobs:
       run: docker build -t ml:latest .
     - name: Run Docker image
       run: docker run -d -p 5000:5000 ml
-    - name: See if Docker image is running
-      run: curl "http://localhost:5000/predict?studytime=3&failures=0&schoolsup=0&famsup=1&activities=1&higher=1&internet=1&freetime=4&Dalc=1&Walc=1&health=4&absences=4"
-    - name: remove build cahce
+    - name: remove build cache
       run: docker system prune
